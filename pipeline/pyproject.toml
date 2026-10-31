@@ -1,0 +1,6 @@
+[project]
+name = "three-minute-class-pipeline"
+version = "0.1.0"
+description = "HTML + TTS + FFmpeg pipeline for short explainer videos"
+requires-python = ">=3.10"
+dependencies = ["edge-tts==7.3.1"]

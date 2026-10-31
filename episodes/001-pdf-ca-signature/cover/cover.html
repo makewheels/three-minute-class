@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>封面 · PDF 上的红章，能信吗？</title>
+<style>
+  :root {
+    --ink: #171614;
+    --body: #3f3a34;
+    --muted: #7a746b;
+    --line: #e7e1d7;
+    --soft: #f8f5ef;
+    --red: #c8332d;
+    --red-dark: #a52622;
+    --red-soft: #fbedeb;
+    --green: #1e7a4c;
+    --green-soft: #eaf6ef;
+    --sans: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    --mono: "SF Mono", "JetBrains Mono", "Menlo", monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+  }
+  .cover {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    background:
+      radial-gradient(1100px 700px at 4% -10%, rgba(200, 51, 45, 0.07), transparent 62%),
+      radial-gradient(900px 700px at 104% 110%, rgba(35, 88, 165, 0.05), transparent 62%),
+      #fff;
+  }
+  .masthead {
+    position: absolute;
+    top: 58px;
+    left: 88px;
+    right: 88px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+  }
+  .mark {
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    background: var(--red);
+    transform: rotate(45deg);
+  }
+  .brand span {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+  }
+  .tag {
+    font-size: 18px;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+  }
+  .rule {
+    position: absolute;
+    top: 126px;
+    left: 88px;
+    right: 88px;
+    height: 1px;
+    background: var(--line);
+  }
+  .main {
+    position: absolute;
+    inset: 190px 88px 100px;
+    display: grid;
+    grid-template-columns: 1.06fr 0.94fr;
+    gap: 70px;
+    align-items: center;
+  }
+  .copy h1 {
+    margin: 0;
+    font-size: 126px;
+    line-height: 1.08;
+    font-weight: 700;
+    letter-spacing: -0.045em;
+  }
+  .copy h1 em {
+    font-style: normal;
+    color: var(--red);
+  }
+  .sub {
+    margin: 38px 0 0;
+    font-size: 52px;
+    line-height: 1.4;
+    color: var(--body);
+    letter-spacing: -0.01em;
+  }
+  .chips {
+    display: flex;
+    gap: 12px;
+    margin-top: 34px;
+  }
+  .chips span {
+    padding: 10px 19px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.75);
+    font-size: 21px;
+    color: var(--muted);
+  }
+  .copy-foot {
+    margin-top: 58px;
+    font-family: var(--mono);
+    font-size: 18px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+  .copy-foot::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 11px;
+    border-radius: 50%;
+    background: var(--red);
+    vertical-align: 2px;
+  }
+  .visual {
+    position: relative;
+    height: 760px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .doc {
+    position: relative;
+    width: 590px;
+    height: 750px;
+    padding: 42px 44px;
+    border: 1px solid #e3ddd2;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 34px 70px rgba(45, 35, 20, 0.14);
+  }
+  .doc-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 18px;
+    border-bottom: 3px solid var(--ink);
+    font-size: 34px;
+    font-weight: 700;
+  }
+  .doc-head span {
+    font-family: var(--mono);
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+  .doc-meta {
+    margin-top: 13px;
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: #a39b8f;
+  }
+  .lines {
+    margin-top: 38px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .lines i {
+    display: block;
+    height: 10px;
+    border-radius: 5px;
+    background: #ebe6dc;
+  }
+  .seal {
+    position: absolute;
+    right: 39px;
+    bottom: 108px;
+    width: 192px;
+    height: 192px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 8px solid var(--red);
+    border-radius: 12px;
+    color: var(--red);
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: inset 0 0 0 3px #fff, inset 0 0 0 5px var(--red);
+    transform: rotate(-9deg);
+    opacity: 0.9;
+  }
+  .seal strong {
+    font-size: 54px;
+    line-height: 1;
+    letter-spacing: 0.08em;
+  }
+  .seal span {
+    margin-top: 11px;
+    font-size: 17px;
+    letter-spacing: 0.2em;
+  }
+  .check {
+    position: absolute;
+    right: 44px;
+    bottom: 42px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--green);
+    font-size: 15px;
+  }
+  .check b {
+    display: inline-flex;
+    width: 22px;
+    height: 22px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--green);
+    color: #fff;
+    font-size: 13px;
+  }
+  .badge {
+    position: absolute;
+    left: 22px;
+    bottom: 46px;
+    width: 176px;
+    height: 176px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--red);
+    color: #fff;
+    box-shadow: 0 18px 36px rgba(200, 51, 45, 0.24);
+    transform: rotate(-7deg);
+  }
+  .badge strong {
+    font-size: 70px;
+    line-height: 0.95;
+    font-weight: 700;
+  }
+  .badge span {
+    margin-top: 8px;
+    font-size: 23px;
+    letter-spacing: 0.16em;
+  }
+  .bottom-rule {
+    position: absolute;
+    left: 88px;
+    right: 88px;
+    bottom: 62px;
+    height: 1px;
+    background: var(--line);
+  }
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="masthead">
+    <div class="brand"><span class="mark"></span>三分钟课堂 <span>EP.01</span></div>
+  </div>
+  <div class="rule"></div>
+
+  <div class="main">
+    <div class="copy">
+      <h1>PDF 上的<em>红章</em>，<br>能信吗？</h1>
+      <p class="sub">3 分钟，看懂电子签章的真伪</p>
+    </div>
+    <div class="visual">
+      <div class="doc">
+        <div class="doc-head">采购合同 <span>PDF</span></div>
+        <div class="doc-meta">CONTRACT · 2026-1031</div>
+        <div class="lines">
+          <i style="width:92%"></i><i style="width:78%"></i><i style="width:88%"></i>
+          <i style="width:64%"></i><i style="width:84%"></i><i style="width:72%"></i>
+          <i style="width:90%"></i><i style="width:56%"></i>
+        </div>
+        <div class="seal"><strong>示例</strong><span>电子签章</span></div>
+        <div class="check"><b>✓</b> 签名有效，文档未被修改</div>
+      </div>
+      <div class="badge"><strong>3</strong><span>分钟</span></div>
+    </div>
+  </div>
+  <div class="bottom-rule"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <radialGradient id="warm" cx="6%" cy="-8%" r="62%">
+      <stop offset="0" stop-color="#c8332d" stop-opacity="0.07"/>
+      <stop offset="1" stop-color="#c8332d" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cool" cx="104%" cy="108%" r="62%">
+      <stop offset="0" stop-color="#2358a5" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#2358a5" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="docShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="34" stdDeviation="35" flood-color="#2d2314" flood-opacity="0.14"/>
+    </filter>
+    <filter id="badgeShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#c8332d" flood-opacity="0.24"/>
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <rect width="1920" height="1080" fill="url(#warm)"/>
+  <rect width="1920" height="1080" fill="url(#cool)"/>
+
+  <g font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, sans-serif">
+    <rect x="88" y="52" width="16" height="16" rx="2" fill="#c8332d" transform="rotate(45 96 60)"/>
+    <text x="120" y="74" font-size="25" font-weight="600" letter-spacing="4" fill="#171614">三分钟课堂</text>
+    <text x="272" y="72" font-size="18" letter-spacing="1.5" fill="#7a746b">EP.01</text>
+  </g>
+  <line x1="88" y1="126" x2="1832" y2="126" stroke="#e7e1d7" stroke-width="1"/>
+
+  <g font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, sans-serif">
+    <text x="88" y="470" font-size="126" font-weight="700" letter-spacing="-5" fill="#171614">PDF 上的<tspan fill="#c8332d">红章</tspan>，</text>
+    <text x="88" y="612" font-size="126" font-weight="700" letter-spacing="-5" fill="#171614">能信吗？</text>
+    <text x="88" y="702" font-size="52" letter-spacing="-0.5" fill="#3f3a34">3 分钟，看懂电子签章的真伪</text>
+  </g>
+
+  <g filter="url(#docShadow)">
+    <rect x="1143" y="210" width="590" height="750" rx="5" fill="#ffffff" stroke="#e3ddd2"/>
+  </g>
+
+  <g font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, sans-serif">
+    <text x="1187" y="285" font-size="34" font-weight="700" fill="#171614">采购合同</text>
+    <text x="1689" y="283" font-family="SF Mono, Menlo, monospace" font-size="15" letter-spacing="1.5" text-anchor="end" fill="#7a746b">PDF</text>
+  </g>
+  <line x1="1187" y1="302" x2="1689" y2="302" stroke="#171614" stroke-width="3"/>
+  <text x="1187" y="328" font-family="SF Mono, Menlo, monospace" font-size="13" letter-spacing="1.4" fill="#a39b8f">CONTRACT · 2026-1031</text>
+
+  <g fill="#ebe6dc">
+    <rect x="1187" y="360" width="462" height="10" rx="5"/>
+    <rect x="1187" y="385" width="392" height="10" rx="5"/>
+    <rect x="1187" y="410" width="442" height="10" rx="5"/>
+    <rect x="1187" y="435" width="321" height="10" rx="5"/>
+    <rect x="1187" y="460" width="422" height="10" rx="5"/>
+    <rect x="1187" y="485" width="361" height="10" rx="5"/>
+    <rect x="1187" y="510" width="452" height="10" rx="5"/>
+    <rect x="1187" y="535" width="281" height="10" rx="5"/>
+  </g>
+
+  <g transform="rotate(-9 1598 756)" font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, sans-serif">
+    <rect x="1502" y="660" width="192" height="192" rx="12" fill="#ffffff" fill-opacity="0.55" stroke="#c8332d" stroke-width="8"/>
+    <rect x="1512" y="670" width="172" height="172" rx="8" fill="none" stroke="#c8332d" stroke-width="2"/>
+    <text x="1598" y="766" font-size="54" font-weight="700" letter-spacing="4" text-anchor="middle" fill="#c8332d">示例</text>
+    <text x="1598" y="806" font-size="17" letter-spacing="4" text-anchor="middle" fill="#c8332d">电子签章</text>
+  </g>
+
+  <g font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, sans-serif">
+    <circle cx="1198" cy="934" r="11" fill="#1e7a4c"/>
+    <text x="1198" y="939" font-size="13" font-weight="700" text-anchor="middle" fill="#ffffff">✓</text>
+    <text x="1217" y="940" font-size="15" fill="#1e7a4c">签名有效，文档未被修改</text>
+  </g>
+
+  <g filter="url(#badgeShadow)">
+    <circle cx="1155" cy="830" r="88" fill="#c8332d"/>
+  </g>
+  <g font-family="PingFang SC, Hiragino Sans GB, Noto Sans SC, sans-serif" fill="#ffffff" text-anchor="middle">
+    <text x="1155" y="838" font-size="70" font-weight="700">3</text>
+    <text x="1155" y="880" font-size="23" letter-spacing="4">分钟</text>
+  </g>
+
+  <line x1="88" y1="1018" x2="1832" y2="1018" stroke="#e7e1d7" stroke-width="1"/>
+</svg>

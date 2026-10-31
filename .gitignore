@@ -1,0 +1,28 @@
+# Python
+pipeline/.venv/
+__pycache__/
+*.py[cod]
+
+# Node
+pipeline/node_modules/
+
+# Render intermediates (frames, segments, silent video)
+episodes/*/render/
+
+# Generated raster assets (B站封面上传用，不入库)
+episodes/*/cover/*.png
+episodes/*/out/poster.png
+
+# Local env
+.env
+*.env
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Local tool output
+*.log
+cookies*.json
+qrcode.png

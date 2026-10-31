@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>三分钟课堂 · PDF 上的红章，能信吗？</title>
+<link rel="stylesheet" href="slides.css">
+</head>
+<body class="player">
+<div class="stage-wrap" id="stageWrap">
+  <div class="stage" id="stage">
+
+    <svg class="icon-defs" aria-hidden="true">
+      <defs>
+        <symbol id="i-person" viewBox="0 0 120 160">
+          <circle cx="60" cy="40" r="26" fill="currentColor"/>
+          <path d="M12 156c0-30 22-52 48-52s48 22 48 52z" fill="currentColor"/>
+        </symbol>
+        <symbol id="i-doc" viewBox="0 0 160 200">
+          <path d="M24 8h84l28 28v156H24z" fill="#fff" stroke="currentColor" stroke-width="5"/>
+          <path d="M108 8v28h28" fill="none" stroke="currentColor" stroke-width="5"/>
+          <g stroke="currentColor" stroke-width="5" stroke-linecap="round">
+            <path d="M44 64h72M44 88h72M44 112h56M44 136h64"/>
+          </g>
+        </symbol>
+        <symbol id="i-seal" viewBox="0 0 160 160">
+          <rect x="8" y="8" width="144" height="144" rx="10" fill="none" stroke="#C8332D" stroke-width="10"/>
+          <rect x="24" y="24" width="112" height="112" rx="5" fill="none" stroke="#C8332D" stroke-width="3"/>
+          <text x="80" y="86" text-anchor="middle" font-size="42" font-weight="700" fill="#C8332D">示例</text>
+          <text x="80" y="118" text-anchor="middle" font-size="15" letter-spacing="4" fill="#C8332D">电子签章</text>
+        </symbol>
+        <symbol id="i-key" viewBox="0 0 160 100">
+          <circle cx="36" cy="50" r="24" fill="none" stroke="currentColor" stroke-width="12"/>
+          <path d="M58 50h86M120 50v22M142 50v18" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round"/>
+        </symbol>
+        <symbol id="i-lock" viewBox="0 0 120 150">
+          <rect x="14" y="62" width="92" height="76" rx="12" fill="currentColor"/>
+          <path d="M34 62V44a26 26 0 0 1 52 0v18" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round"/>
+          <circle cx="60" cy="98" r="8" fill="#fff"/>
+        </symbol>
+        <symbol id="i-id" viewBox="0 0 180 120">
+          <rect x="4" y="4" width="172" height="112" rx="10" fill="#fff" stroke="currentColor" stroke-width="5"/>
+          <circle cx="46" cy="48" r="18" fill="currentColor"/>
+          <path d="M20 96c0-18 12-30 26-30s26 12 26 30" fill="currentColor"/>
+          <g stroke="currentColor" stroke-width="5" stroke-linecap="round">
+            <path d="M86 36h70M86 58h70M86 80h48"/>
+          </g>
+          <rect x="120" y="78" width="40" height="24" rx="3" fill="none" stroke="#C8332D" stroke-width="3"/>
+          <text x="140" y="95" text-anchor="middle" font-size="12" fill="#C8332D">CA</text>
+        </symbol>
+        <symbol id="i-ca" viewBox="0 0 160 160">
+          <path d="M10 56L80 14l70 42z" fill="currentColor"/>
+          <rect x="22" y="56" width="116" height="12" fill="currentColor"/>
+          <g fill="currentColor">
+            <rect x="30" y="68" width="14" height="58"/><rect x="58" y="68" width="14" height="58"/>
+            <rect x="86" y="68" width="14" height="58"/><rect x="114" y="68" width="14" height="58"/>
+          </g>
+          <rect x="18" y="126" width="124" height="14" fill="currentColor"/>
+        </symbol>
+        <symbol id="i-clock" viewBox="0 0 120 120">
+          <circle cx="60" cy="60" r="50" fill="#fff" stroke="currentColor" stroke-width="8"/>
+          <path d="M60 30v32l22 14" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+        </symbol>
+        <symbol id="i-check" viewBox="0 0 120 120">
+          <circle cx="60" cy="60" r="52" fill="currentColor"/>
+          <path d="M32 62l20 20 38-44" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="i-x" viewBox="0 0 120 120">
+          <circle cx="60" cy="60" r="52" fill="currentColor"/>
+          <path d="M40 40l40 40M80 40L40 80" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round"/>
+        </symbol>
+        <symbol id="i-search" viewBox="0 0 120 120">
+          <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="10"/>
+          <path d="M72 72l30 30" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round"/>
+        </symbol>
+        <symbol id="i-mail" viewBox="0 0 160 110">
+          <rect x="6" y="6" width="148" height="98" rx="8" fill="#fff" stroke="currentColor" stroke-width="6"/>
+          <path d="M8 12l72 54 72-54" fill="none" stroke="currentColor" stroke-width="6"/>
+        </symbol>
+        <symbol id="i-scale" viewBox="0 0 160 160">
+          <path d="M80 16v128M30 144h100M80 40L28 104M80 40l52 64" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+          <path d="M10 104h36a18 18 0 0 1-36 0zM114 104h36a18 18 0 0 1-36 0z" fill="currentColor"/>
+        </symbol>
+        <symbol id="i-link" viewBox="0 0 160 100">
+          <path d="M64 50a24 24 0 0 1 24-24h18a24 24 0 0 1 0 48h-10M96 50a24 24 0 0 1-24 24H54a24 24 0 0 1 0-48h10" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
+        </symbol>
+        <symbol id="i-finger" viewBox="0 0 120 140">
+          <g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round">
+            <path d="M30 108c-6-10-8-22-8-34a38 38 0 0 1 76 0c0 18-4 30-10 44"/>
+            <path d="M42 112c-4-10-6-20-6-32a24 24 0 0 1 48 0c0 14-2 26-6 36"/>
+            <path d="M56 108c-2-8-2-16-2-24a8 8 0 0 1 16 0c0 10 0 20-2 30"/>
+          </g>
+        </symbol>
+        <symbol id="i-image" viewBox="0 0 140 120">
+          <rect x="8" y="8" width="124" height="104" rx="8" fill="#fff" stroke="currentColor" stroke-width="7"/>
+          <circle cx="42" cy="40" r="10" fill="currentColor"/>
+          <path d="M20 96l30-32 22 20 18-14 30 26" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="i-edit" viewBox="0 0 140 120">
+          <path d="M16 104l8-30 62-62 22 22-62 62z" fill="#fff" stroke="currentColor" stroke-width="7" stroke-linejoin="round"/>
+          <path d="M78 20l22 22" stroke="currentColor" stroke-width="7"/>
+        </symbol>
+      </defs>
+    </svg>
+
+    <header class="masthead">
+      <div class="brand"><span class="brand-mark"></span>三分钟课堂<span class="ep">EP.01</span></div>
+      <div class="masthead-right">CA 电子签章</div>
+    </header>
+    <div class="top-rule"></div>
+
+    <main id="scenes">
+
+      <!-- 01 开场 -->
+      <section class="scene scene-hook" data-scene="hook">
+        <div class="hook-copy">
+          <div class="kicker">CA 电子签章</div>
+          <h1 class="headline">PDF 上的<span class="red">红章</span>，<br>能信吗？</h1>
+          <p class="lead">红章可以 P，截图可以伪造。<br>真正防伪的，是<strong>数字签名</strong>。</p>
+        </div>
+        <div class="hook-stage">
+          <div class="person signer blue anim" data-anim="move-right" data-distance="130" data-delay="0.2">
+            <svg class="icon" viewBox="0 0 120 160"><use href="#i-person"/></svg>
+          </div>
+          <div class="doc-wrap anim" data-anim="pop" data-delay="0.55">
+            <svg class="icon blue" viewBox="0 0 160 200"><use href="#i-doc"/></svg>
+            <div class="doc-label">采购合同</div>
+            <div class="seal-wrap anim" data-anim="stamp" data-delay="1.15">
+              <svg class="icon" viewBox="0 0 160 160"><use href="#i-seal"/></svg>
+            </div>
+          </div>
+          <div class="person receiver gray anim" data-anim="move-left" data-distance="130" data-delay="1.35">
+            <svg class="icon" viewBox="0 0 120 160"><use href="#i-person"/></svg>
+          </div>
+          <div class="search anim" data-anim="move-down" data-distance="110" data-delay="1.75">
+            <svg class="icon blue" viewBox="0 0 120 120"><use href="#i-search"/></svg>
+          </div>
+          <div class="p-badge anim" data-anim="pop" data-delay="3.2">P</div>
+          <div class="hook-callout anim" data-anim="fade-in" data-delay="2.2"><span></span>红章只是图片，真伪看签名。</div>
+        </div>
+      </section>
+
+      <!-- 02 法律 -->
+      <section class="scene scene-law" data-scene="law">
+        <div class="law-left">
+          <div class="kicker">01 / 法律</div>
+          <h2 class="headline">法律认的不是红章，<br><span class="red">是可靠的电子签名</span>。</h2>
+          <div class="law-quote">
+            <div class="scale anim" data-anim="pop" data-delay="0.35">
+              <svg class="icon ink" viewBox="0 0 160 160"><use href="#i-scale"/></svg>
+            </div>
+            <p>《电子签名法》第十四条：<br>可靠的电子签名，与手写签名或者盖章，<br>具有同等的法律效力。</p>
+          </div>
+        </div>
+        <div class="law-right">
+          <div class="condition-grid">
+            <div class="condition anim" data-anim="fade-up" data-delay="0.45">
+              <svg class="icon red" viewBox="0 0 160 100"><use href="#i-key"/></svg><strong>只属于你</strong>
+            </div>
+            <div class="condition anim" data-anim="fade-up" data-delay="0.6">
+              <svg class="icon red" viewBox="0 0 120 150"><use href="#i-lock"/></svg><strong>只由你控制</strong>
+            </div>
+            <div class="condition anim" data-anim="fade-up" data-delay="0.75">
+              <svg class="icon green" viewBox="0 0 120 120"><use href="#i-check"/></svg><strong>签名改了能发现</strong>
+            </div>
+            <div class="condition anim" data-anim="fade-up" data-delay="0.9">
+              <svg class="icon green" viewBox="0 0 160 200"><use href="#i-doc"/></svg><strong>内容改了能发现</strong>
+            </div>
+          </div>
+          <div class="six-words anim" data-anim="fade-up" data-delay="1.1">专有 · 专控 · 防篡改</div>
+          <div class="law-compare">
+            <div class="compare bad anim" data-anim="fade-up" data-delay="1.3">
+              <svg class="icon red" viewBox="0 0 140 120"><use href="#i-image"/></svg>
+              <div><strong>红章图片</strong><span>只是图片</span></div>
+            </div>
+            <div class="compare good anim" data-anim="fade-up" data-delay="1.45">
+              <svg class="icon green" viewBox="0 0 160 200"><use href="#i-doc"/></svg>
+              <div><strong>可靠电子签名</strong><span>法律认可</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 原理 -->
+      <section class="scene scene-principle" data-scene="principle">
+        <div class="kicker">02 / 原理</div>
+        <h2 class="headline">私钥签名，<span class="red">公钥验签</span>。</h2>
+        <div class="proof-stage">
+          <div class="proof-side left anim" data-anim="move-right" data-distance="120" data-delay="0.2">
+            <svg class="icon blue" viewBox="0 0 120 160"><use href="#i-person"/></svg>
+            <div class="proof-key red anim" data-anim="pop" data-delay="0.7">
+              <svg class="icon" viewBox="0 0 160 100"><use href="#i-key"/></svg>
+            </div>
+            <span class="stage-label">星河科技<br>私钥</span>
+          </div>
+          <div class="proof-card anim" data-anim="pop" data-delay="0.3">
+            <div class="proof-head"><strong>采购合同</strong><span>星河科技 → 云海供应链</span></div>
+            <div class="proof-row"><span>金额</span><strong>100 万元</strong></div>
+            <div class="proof-row"><span>SHA-256</span><code>6364 1375 5476 8301</code></div>
+            <div class="proof-status"><svg class="icon green" viewBox="0 0 120 120"><use href="#i-check"/></svg>签名有效</div>
+            <div class="proof-seal anim" data-anim="stamp" data-delay="1.4">
+              <svg class="icon" viewBox="0 0 160 160"><use href="#i-seal"/></svg>
+            </div>
+          </div>
+          <div class="proof-side right anim" data-anim="move-left" data-distance="120" data-delay="0.5">
+            <svg class="icon gray" viewBox="0 0 120 160"><use href="#i-person"/></svg>
+            <div class="proof-key green anim" data-anim="pop" data-delay="0.9">
+              <svg class="icon" viewBox="0 0 160 100"><use href="#i-key"/></svg>
+            </div>
+            <span class="stage-label">云海供应链<br>公钥</span>
+          </div>
+          <svg class="proof-arrow pa1" viewBox="0 0 340 20"><path d="M4 10h328" pathLength="1" data-anim="draw" data-delay="0.8"/><path d="M328 3l10 7-10 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="proof-arrow pa2" viewBox="0 0 140 20"><path d="M136 10H10" pathLength="1" data-anim="draw" data-delay="1.0"/><path d="M10 3L0 10l10 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="statement">哈希对得上，才算原件。</div>
+      </section>
+
+      <!-- 04 改一个字 -->
+      <section class="scene scene-tamper" data-scene="tamper">
+        <div class="kicker">03 / 改一个字</div>
+        <h2 class="headline">改一个字，<span class="red">签名就废了</span>。</h2>
+        <div class="tamper-stage">
+          <div class="tamper-card good anim" data-anim="pop" data-delay="0.2">
+            <div class="tamper-head"><strong>原件</strong><span>星河科技 → 云海供应链</span></div>
+            <div class="tamper-row"><span>金额</span><strong>100 万元</strong></div>
+            <div class="tamper-row"><span>SHA-256</span><code>6364 1375 5476 8301</code></div>
+            <div class="tamper-status green"><svg class="icon green" viewBox="0 0 120 120"><use href="#i-check"/></svg>签名有效</div>
+          </div>
+          <div class="tamper-card bad anim" data-anim="slide-left" data-delay="1.0">
+            <div class="tamper-head"><strong>改一个字</strong><span>金额 100 → 900</span></div>
+            <div class="tamper-row"><span>金额</span><strong class="red">900 万元</strong></div>
+            <div class="tamper-row"><span>SHA-256</span><code class="red">0e72 fa14 ef85 07a1</code></div>
+            <div class="tamper-status red"><svg class="icon red" viewBox="0 0 120 120"><use href="#i-x"/></svg>验签失败</div>
+          </div>
+          <div class="tamper-badge anim" data-anim="pop" data-delay="1.3">改</div>
+        </div>
+        <div class="statement">哈希变了，签名就对不上。</div>
+      </section>
+
+      <!-- 05 CA 与证书 -->
+      <section class="scene scene-cert" data-scene="cert">
+        <div class="cert-copy">
+          <div class="kicker">05 / 身份</div>
+          <h2 class="headline">CA 是什么？<br><span class="red">数字身份证的签发处</span></h2>
+          <p class="lead">证书 = <strong>身份 + 公钥</strong>，CA 盖章。</p>
+        </div>
+        <div class="cert-stage">
+          <div class="cert-person anim" data-anim="move-right" data-distance="150" data-delay="0.2">
+            <svg class="icon blue" viewBox="0 0 120 160"><use href="#i-person"/></svg>
+            <div class="id-mini anim" data-anim="move-right" data-distance="190" data-delay="0.8">
+              <svg class="icon blue" viewBox="0 0 180 120"><use href="#i-id"/></svg>
+            </div>
+            <span class="stage-label">星河科技</span>
+          </div>
+          <svg class="flow-line ca-l1" viewBox="0 0 120 20"><path d="M4 10h108" pathLength="1" data-anim="draw" data-delay="0.7"/><path d="M108 3l10 7-10 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="cert-ca anim" data-anim="pop" data-delay="0.95">
+            <svg class="icon red" viewBox="0 0 160 160"><use href="#i-ca"/></svg>
+            <div class="ca-stamp anim" data-anim="stamp-small" data-delay="1.55">CA</div>
+            <span class="stage-label">CA 审核</span>
+          </div>
+          <svg class="flow-line ca-l2" viewBox="0 0 120 20"><path d="M4 10h108" pathLength="1" data-anim="draw" data-delay="1.5"/><path d="M108 3l10 7-10 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="cert-card anim" data-anim="pop" data-delay="1.7">
+            <svg class="icon blue" viewBox="0 0 180 120"><use href="#i-id"/></svg>
+            <div class="cert-seal anim" data-anim="stamp" data-delay="2.1">
+              <svg class="icon" viewBox="0 0 160 160"><use href="#i-seal"/></svg>
+            </div>
+            <span class="stage-label">证书 · 星河科技</span>
+          </div>
+          <svg class="flow-line ca-l3" viewBox="0 0 120 20"><path d="M4 10h108" pathLength="1" data-anim="draw" data-delay="2.5"/><path d="M108 3l10 7-10 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="cert-receiver anim" data-anim="move-left" data-distance="130" data-delay="2.45">
+            <svg class="icon gray" viewBox="0 0 120 160"><use href="#i-person"/></svg>
+            <span class="stage-label">云海供应链</span>
+          </div>
+          <div class="chain anim" data-anim="fade-in" data-delay="2.85">
+            <svg class="icon green" viewBox="0 0 160 100"><use href="#i-link"/></svg>
+            <span>根证书</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 签章 -->
+      <section class="scene scene-sign" data-scene="sign">
+        <div class="kicker">06 / 签章</div>
+        <h2 class="headline">签名、证书、时间戳，<br><span class="red">一起写进 PDF</span>。</h2>
+        <div class="sign-stage">
+          <svg class="sign-arrow sa1" viewBox="0 0 320 20"><path d="M4 10h308" pathLength="1" data-anim="draw" data-delay="0.8"/><path d="M308 3l10 7-10 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="sign-arrow sa2" viewBox="0 0 320 20"><path d="M4 10h308" pathLength="1" data-anim="draw" data-delay="1.1"/><path d="M308 3l10 7-10 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="sign-arrow sa3" viewBox="0 0 340 20"><path d="M336 10H10" pathLength="1" data-anim="draw" data-delay="1.4"/><path d="M10 3L0 10l10 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="sign-doc anim" data-anim="pop" data-delay="0.25">
+            <svg class="icon blue" viewBox="0 0 160 200"><use href="#i-doc"/></svg>
+            <div class="sign-chips">
+              <span class="chip anim" data-anim="pop" data-delay="1.0">签名</span>
+              <span class="chip anim" data-anim="pop" data-delay="1.35">证书</span>
+              <span class="chip anim" data-anim="pop" data-delay="1.7">时间戳</span>
+            </div>
+            <div class="sign-seal anim" data-anim="stamp" data-delay="2.1">
+              <svg class="icon" viewBox="0 0 160 160"><use href="#i-seal"/></svg>
+            </div>
+          </div>
+          <div class="sign-item sig anim" data-anim="move-right" data-distance="170" data-delay="0.6">
+            <svg class="icon red" viewBox="0 0 160 100"><use href="#i-key"/></svg><span>签名</span>
+          </div>
+          <div class="sign-item cert anim" data-anim="move-left" data-distance="170" data-delay="0.9">
+            <svg class="icon blue" viewBox="0 0 180 120"><use href="#i-id"/></svg><span>证书</span>
+          </div>
+          <div class="sign-item time anim" data-anim="move-left" data-distance="170" data-delay="1.2">
+            <svg class="icon amber" viewBox="0 0 120 120"><use href="#i-clock"/></svg><span>时间戳</span>
+          </div>
+          <div class="sign-check anim" data-anim="pop" data-delay="2.6">
+            <svg class="icon green" viewBox="0 0 120 120"><use href="#i-check"/></svg>
+          </div>
+        </div>
+        <div class="statement">证书过期，<span class="red">看时间戳</span>。</div>
+      </section>
+
+      <!-- 07 验签 -->
+      <section class="scene scene-verify" data-scene="verify">
+        <div class="kicker">07 / 验签</div>
+        <h2 class="headline">怎么验？<span class="red">看签名面板</span>。</h2>
+        <div class="verify-panels">
+          <div class="verify-panel good anim" data-anim="slide-right" data-delay="0.2">
+            <div class="vp-head"><strong>原始 PDF</strong><span>星河科技_采购合同.pdf</span></div>
+            <div class="vp-status green"><svg class="icon green" viewBox="0 0 120 120"><use href="#i-check"/></svg>签名有效，文件没被改</div>
+            <div class="vp-row"><span>签名人</span><strong>星河科技</strong></div>
+            <div class="vp-row"><span>证书</span><strong>CA 已签发</strong></div>
+            <div class="vp-row"><span>时间戳</span><strong class="green">有效</strong></div>
+          </div>
+          <div class="verify-panel bad anim" data-anim="slide-left" data-delay="1.4">
+            <div class="vp-head"><strong>改过一个字</strong><span>星河科技_采购合同_改.pdf</span></div>
+            <div class="vp-status red"><svg class="icon red" viewBox="0 0 120 120"><use href="#i-x"/></svg>验签失败，文件已被修改</div>
+            <div class="vp-row"><span>签名人</span><strong>星河科技</strong></div>
+            <div class="vp-row"><span>哈希</span><strong class="red">不一致</strong></div>
+            <div class="vp-row"><span>时间戳</span><strong>有效，但内容不匹配</strong></div>
+          </div>
+        </div>
+        <div class="statement">绿色是通过，<span class="red">红色是失败</span>。</div>
+      </section>
+
+      <!-- 08 三个坑 -->
+      <section class="scene scene-pitfalls" data-scene="pitfalls">
+        <div class="kicker">08 / 三个坑</div>
+        <h2 class="headline">记住三个坑。</h2>
+        <div class="pitfall-grid">
+          <div class="pitfall-card anim" data-anim="fade-up" data-delay="0.3">
+            <div class="pit-icon"><svg class="icon red" viewBox="0 0 140 120"><use href="#i-image"/></svg><div class="x-badge">×</div></div>
+            <strong>截图 / 打印</strong><p>不是可靠的电子签名</p>
+          </div>
+          <div class="pitfall-card anim" data-anim="fade-up" data-delay="0.45">
+            <div class="pit-icon"><svg class="icon red" viewBox="0 0 160 200"><use href="#i-doc"/></svg><div class="edit-mini"><svg class="icon red" viewBox="0 0 140 120"><use href="#i-edit"/></svg></div><div class="x-badge">×</div></div>
+            <strong>签完改字</strong><p>把 100 万改成 <span class="red">900 万</span><br>验签立刻失败</p>
+          </div>
+          <div class="pitfall-card anim" data-anim="fade-up" data-delay="0.6">
+            <div class="pit-icon"><svg class="icon red" viewBox="0 0 120 120"><use href="#i-clock"/></svg><div class="x-badge">×</div></div>
+            <strong>证书过期</strong><p>看时间戳</p>
+          </div>
+        </div>
+        <div class="statement">红章看外观，<span class="red">真伪看签名</span>。</div>
+        <div class="court-note anim" data-anim="fade-in" data-delay="1.1">图片可以是证据线索；法院看原始 PDF、证书、时间戳。</div>
+      </section>
+
+      <!-- 08 收束 -->
+      <section class="scene scene-outro" data-scene="outro">
+        <div class="kicker">09 / 总结</div>
+        <h2 class="headline">记住三看。</h2>
+        <div class="outro-grid">
+          <div class="outro-list">
+            <div class="anim" data-anim="slide-right" data-delay="0.3">
+              <div class="o-icon"><svg class="icon blue" viewBox="0 0 160 200"><use href="#i-doc"/></svg><svg class="icon green o-check" viewBox="0 0 120 120"><use href="#i-check"/></svg></div>
+              <span>签名面板</span><strong>文件有没有被改</strong>
+            </div>
+            <div class="anim" data-anim="slide-right" data-delay="0.45">
+              <div class="o-icon"><svg class="icon green" viewBox="0 0 160 100"><use href="#i-link"/></svg></div>
+              <span>证书链</span><strong>签名人是谁</strong>
+            </div>
+            <div class="anim" data-anim="slide-right" data-delay="0.6">
+              <div class="o-icon"><svg class="icon amber" viewBox="0 0 120 120"><use href="#i-clock"/></svg></div>
+              <span>时间戳</span><strong>什么时候签的</strong>
+            </div>
+          </div>
+          <div class="outro-card anim" data-anim="pop" data-delay="3.1">
+            <img src="qr.svg" alt="开源仓库二维码">
+            <div>全部开源</div>
+          </div>
+        </div>
+        <div class="outro-repo anim" data-anim="fade-in" data-delay="0.9">github.com/makewheels/three-minute-class</div>
+      </section>
+
+    </main>
+
+    <div class="caption" id="caption"></div>
+    <div class="progress"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="page-num" id="pageNum">01 / 09</div>
+  </div>
+</div>
+
+<div class="controls" id="controls">
+  <button id="playBtn" aria-label="播放">▶</button>
+  <input id="seekBar" type="range" min="0" max="1000" value="0" aria-label="进度">
+  <span class="time" id="timeLabel">00:00 / 02:43</span>
+  <button id="muteBtn" aria-label="静音">静音</button>
+  <button id="fullBtn" aria-label="全屏">全屏</button>
+</div>
+
+<audio id="narration" src="../audio/narration.m4a" preload="metadata"></audio>
+<script src="data.js"></script>
+<script src="slides.js"></script>
+</body>
+</html>
