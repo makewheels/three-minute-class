@@ -1,0 +1,79 @@
+:root {
+  --ink: #171614;
+  --red: #c8332d;
+  --green: #1e7a4c;
+  --blue: #2358a5;
+  --amber: #966200;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #f3f4f6; color: var(--ink); font-family: "Microsoft YaHei", "PingFang SC", sans-serif; }
+body { display: flex; flex-direction: column; align-items: center; padding: 20px; }
+#stageWrap { position: relative; overflow: hidden; background: #fff; flex-shrink: 0; }
+#stage { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #fff; transform-origin: top left; }
+header { position: absolute; top: 38px; left: 80px; right: 80px; height: 65px; border-bottom: 2px solid #e8e8e8; display: flex; justify-content: space-between; font-size: 30px; z-index: 3; }
+header > span { display: flex; align-items: baseline; gap: 18px; }
+header > span:last-child { color: #777; }
+header em { font-style: normal; color: #777; }
+.brand-dot { width: 16px; height: 16px; background: var(--red); display: inline-block; transform: rotate(45deg); }
+.scene { display: none; position: absolute; inset: 0; padding: 144px 100px 220px; }
+.scene.active { display: block; }
+.eyebrow { font-size: 32px; font-weight: 600; color: #68635d; margin-bottom: 24px; }
+h1 { margin: 0; font-size: 87px; line-height: 1.2; letter-spacing: -3px; }
+h2 { font-size: 45px; line-height: 1.3; margin: 16px 0; }
+p { font-size: 34px; line-height: 1.5; margin: 12px 0; }
+.red { color: var(--red); }
+.green { color: var(--green); }
+.blue { color: var(--blue); }
+.amber { color: var(--amber); }
+.conclusion { position: absolute; top: 744px; left: 100px; right: 100px; margin: 0; padding-top: 20px; border-top: 3px solid #eee; font-size: 42px; font-weight: 600; color: var(--ink); }
+.cards { display: grid; gap: 30px; margin-top: 55px; }
+.three { grid-template-columns: repeat(3, 1fr); }
+.cards article, .flow article { border: 3px solid currentColor; border-radius: 22px; padding: 30px; background: #fff; }
+.cards article { min-height: 322px; }
+.cards p, .flow p { color: #514d48; }
+.symbol { width: 90px; height: 90px; border-radius: 20px; background: color-mix(in srgb, currentColor 9%, white); display: grid; place-items: center; font-size: 48px; font-weight: 700; }
+.hero-diagram { display: flex; align-items: center; justify-content: center; gap: 100px; height: 390px; margin-top: 18px; }
+.console { width: 210px; height: 300px; border: 12px solid #d5dcea; border-radius: 35px 5px 35px 5px; background: #f5f7fb; transform: skewY(-6deg); padding: 10px 24px; }
+.console-core { height: 100%; background: #171c27; color: #fff; display: grid; place-items: center; font-size: 48px; border-radius: 12px; }
+.arrow { color: var(--red); font-size: 90px; font-weight: 700; text-align: center; }
+.vault { border: 5px solid var(--blue); border-radius: 25px; padding: 28px 55px; display: flex; flex-direction: column; align-items: center; gap: 18px; color: var(--blue); }
+.vault strong { font-size: 55px; }
+.vault span { font-size: 34px; color: #514d48; }
+.lock { position: relative; width: 76px; height: 60px; border-radius: 12px; background: currentColor; margin: 36px auto 10px; }
+.lock::before { content: ""; position: absolute; left: 14px; top: -34px; width: 48px; height: 48px; border: 10px solid currentColor; border-bottom: 0; border-radius: 30px 30px 0 0; }
+.lock::after { content: ""; width: 9px; height: 22px; position: absolute; left: 34px; top: 18px; background: #fff; border-radius: 6px; }
+.boundary { display: grid; grid-template-columns: 1fr 240px 1fr; align-items: center; margin: 50px 50px 0; gap: 35px; text-align: center; }
+.ordinary, .secure { border: 4px solid currentColor; padding: 25px; border-radius: 24px; min-height: 300px; }
+.ordinary { color: var(--blue); }
+.ordinary .symbol { margin: auto; width: 125px; }
+.secure { color: var(--green); background: #f3faf6; }
+.boundary p { color: #514d48; }
+.boundary-label { font-size: 35px; color: var(--red); border-left: 4px dashed; border-right: 4px dashed; padding: 20px 10px; }
+.boundary-label b { font-size: 75px; }
+.layer-stack { display: flex; flex-direction: column; gap: 18px; margin: 45px 90px 0; }
+.layer { border: 3px solid currentColor; border-radius: 16px; padding: 20px 36px; display: flex; justify-content: space-between; align-items: center; }
+.layer strong { font-size: 43px; }
+.layer span { font-size: 35px; color: #514d48; }
+.flow { display: grid; grid-template-columns: 1fr 85px 1fr 85px 1fr; gap: 18px; align-items: center; margin-top: 65px; }
+.flow article { min-height: 210px; text-align: center; padding: 24px 12px; }
+.blocked { margin-top: 28px; font-size: 43px; text-align: center; font-weight: 600; }
+.blocked span { display: inline-grid; place-items: center; background: var(--red); color: #fff; border-radius: 50%; width: 55px; height: 55px; margin-right: 15px; }
+.case-panel { border: 4px solid #d5dce7; border-radius: 24px; margin-top: 48px; padding: 32px 48px; background: #f9fbfe; }
+.case-title { font-size: 67px; font-family: Consolas, monospace; color: var(--blue); font-weight: 700; }
+.tags, .pill-row { display: flex; justify-content: center; gap: 24px; font-size: 32px; margin-top: 25px; }
+.tags { justify-content: flex-start; }
+.tags span, .pill-row span { background: #edf2f9; padding: 14px 24px; border-radius: 12px; }
+.case-result { display: flex; justify-content: space-between; font-size: 40px; margin-top: 40px; }
+.takeaways { margin-top: 35px; display: grid; gap: 20px; }
+.takeaways > div { font-size: 57px; background: #f7f8fa; border-radius: 16px; padding: 20px 35px; }
+.takeaways span { font: bold 40px Consolas, monospace; color: #90949a; margin-right: 30px; }
+.takeaways b { color: var(--red); margin: 0 20px; }
+#caption { position: absolute; left: 90px; right: 90px; bottom: 69px; min-height: 122px; display: flex; justify-content: center; align-items: center; font-size: 46px; line-height: 1.35; text-align: center; text-wrap: balance; color: #fff; background: #20242b; border-radius: 16px; padding: 16px 45px; white-space: pre-line; z-index: 5; }
+footer { position: absolute; bottom: 22px; left: 90px; right: 90px; display: flex; justify-content: space-between; font-size: 28px; color: #68635d; }
+.progress { position: absolute; bottom: 0; left: 0; right: 0; height: 7px; background: #eee; }
+#progressFill { height: 100%; background: var(--red); }
+#controls { display: flex; align-items: center; gap: 16px; padding: 18px 0; font-size: 18px; }
+#controls button { border: 0; border-radius: 8px; background: var(--red); color: #fff; font: inherit; padding: 10px 24px; cursor: pointer; }
+#seekBar { flex: 1; min-width: 100px; }
+body.render { display: block; padding: 0; background: #fff; overflow: hidden; }
+body.render #controls { display: none; }
