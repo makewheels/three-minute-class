@@ -23,7 +23,7 @@
 
 复现：沿用下方流程，将 `EPISODE` 改为 `episodes/002-ps5-security`。本期所有图形均为原创示意，不使用游戏画面；内容不构成对某个固件、游戏或破解期限的保证。
 
-**开场重做预览（未替换正式成片）**：[HTML 播放器](episodes/002-ps5-security-opening-preview/slides/index.html) · [预览 MP4](episodes/002-ps5-security-opening-preview/out/ps5-security-opening-preview.mp4)。先把观众当作完全不懂 PS5 的小白，按认识主机、提前购买、预下载、点不开的顺序讲清背景；自然语速，每页先留 1.2 秒看画面，讲完再停 2.2 秒，最后问题停留 3 秒。时长服务于理解，不靠加速或压缩知识点。
+**开场重做预览（未替换正式成片）**：[HTML 播放器](episodes/002-ps5-security-opening-preview/slides/index.html) · [预览 MP4](episodes/002-ps5-security-opening-preview/out/ps5-security-opening-preview.mp4)。先把观众当作完全不懂 PS5 的小白，交代主机是什么、游戏由程序和素材组成、正版可以正常运行，再引出“机器和文件都在玩家手里，索尼怎么防止读出、修改程序和绕过限制”。主线是索尼防破解做了什么，不是发售前为什么不能玩。自然语速，每页先留 1.2 秒看画面，讲完再停 2.2 秒，最后停留 3 秒。时长服务于理解，不靠加速或压缩知识点。
 
 ## 往期
 
