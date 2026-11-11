@@ -3,18 +3,21 @@
   <g font-family="Microsoft YaHei, PingFang SC, sans-serif">
     <rect x="100" y="95" width="18" height="18" fill="#c8332d" transform="rotate(45 109 104)"/>
     <text x="145" y="118" font-size="36" fill="#68635d">三分钟课堂 · EP.02</text>
-    <text x="100" y="330" font-size="115" font-weight="700" fill="#171614">PS5 为什么</text>
-    <text x="100" y="490" font-size="140" font-weight="700" fill="#c8332d">难破解？</text>
-    <text x="100" y="620" font-size="48" fill="#514d48">密钥 · 权限 · 漏洞链</text>
-    <text x="100" y="870" font-size="47" fill="#171614">拿到文件 ≠ 突破权限 ≠ PC 可玩</text>
-    <text x="100" y="973" font-size="32" fill="#68635d">三分钟看懂安全攻防原理</text>
-    <g transform="translate(1190 245)">
-      <rect x="0" y="0" width="530" height="110" rx="20" fill="#edf3fb" stroke="#2358a5" stroke-width="4"/>
-      <rect x="0" y="145" width="530" height="110" rx="20" fill="#fff8e9" stroke="#966200" stroke-width="4"/>
-      <rect x="0" y="290" width="530" height="110" rx="20" fill="#eaf6ef" stroke="#1e7a4c" stroke-width="4"/>
-      <text x="265" y="72" text-anchor="middle" font-size="42" fill="#2358a5">应用 / 沙箱</text>
-      <text x="265" y="217" text-anchor="middle" font-size="42" fill="#966200">系统内核</text>
-      <text x="265" y="362" text-anchor="middle" font-size="42" fill="#1e7a4c">Hypervisor</text>
+    <text x="100" y="315" font-size="108" font-weight="700" fill="#171614">游戏都下载了</text>
+    <text x="100" y="480" font-size="116" font-weight="700" fill="#c8332d">索尼怎么防破解？</text>
+    <text x="100" y="610" font-size="45" fill="#514d48">先讲来龙去脉，再讲每一道防线</text>
+    <text x="100" y="860" font-size="48" fill="#171614">PS5：能玩，不等于能随意控制</text>
+    <text x="100" y="970" font-size="36" fill="#68635d">零基础解释 · 自然语速 · 留时间思考</text>
+    <g transform="translate(1260 245)">
+      <rect x="0" y="0" width="540" height="135" rx="20" fill="#edf3fb" stroke="#2358a5" stroke-width="4"/>
+      <rect x="0" y="165" width="540" height="135" rx="20" fill="#fff8e9" stroke="#966200" stroke-width="4"/>
+      <rect x="0" y="330" width="540" height="135" rx="20" fill="#eaf6ef" stroke="#1e7a4c" stroke-width="4"/>
+      <text x="270" y="58" text-anchor="middle" font-size="46" font-weight="700" fill="#2358a5">防直接读</text>
+      <text x="270" y="108" text-anchor="middle" font-size="33" fill="#2358a5">保护内容与钥匙</text>
+      <text x="270" y="223" text-anchor="middle" font-size="46" font-weight="700" fill="#966200">防随意改</text>
+      <text x="270" y="273" text-anchor="middle" font-size="33" fill="#966200">验证程序，保护检查</text>
+      <text x="270" y="388" text-anchor="middle" font-size="46" font-weight="700" fill="#1e7a4c">防越权</text>
+      <text x="270" y="438" text-anchor="middle" font-size="33" fill="#1e7a4c">一层突破不等于通关</text>
     </g>
   </g>
 </svg>

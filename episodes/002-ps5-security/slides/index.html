@@ -3,128 +3,203 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PS5 为什么难破解？ · 三分钟课堂 EP.02</title>
+  <title>PS5 防破解：索尼到底做了什么？ · 三分钟课堂 EP.02</title>
   <link rel="stylesheet" href="slides.css">
 </head>
 <body>
   <main id="stageWrap">
     <div id="stage">
-      <header><span><b class="brand-dot"></b>三分钟课堂 <em>EP.02</em></span><span>PS5 安全 · 攻防原理</span></header>
+      <header><span><b class="brand-dot"></b>三分钟课堂 <em>EP.02</em></span><span>PS5 安全 · 从头讲明白</span></header>
       <div id="scenes">
-        <section class="scene" id="hook">
-          <div class="eyebrow">机器在你手里，权限却不是</div>
-          <h1>PS5 为什么<span class="red">难破解？</span></h1>
-          <div class="hero-diagram">
-            <div class="console" data-enter><div class="console-core">PS5</div></div>
-            <div class="arrow" data-enter>→</div>
-            <div class="vault" data-enter><div class="lock"></div><strong>多层防线</strong><span>文件 ≠ 权限 ≠ 密钥</span></div>
+        <section class="scene" id="console">
+          <div class="eyebrow">先认识一下这台机器</div>
+          <h1>PS5：接上电视，<span class="blue">用手柄玩游戏</span></h1>
+          <div class="equipment" data-enter>
+            <div class="console"><div>PS5</div></div>
+            <div class="cable"></div>
+            <div class="television"><div class="screen"><div class="game-shape"></div><div class="game-ground"></div></div><div class="stand"></div></div>
+            <div class="controller"><b>＋</b><i></i><i></i><i></i><i></i></div>
           </div>
-          <p class="conclusion">不是“猜出一个密码”，而是跨过一道道边界</p>
+          <div class="ticket" data-after="买好"><span>你买好了一款游戏</span><strong>下载之后 <b class="ready">正常能玩</b></strong></div>
         </section>
-        <section class="scene" id="gates">
-          <div class="eyebrow">先分清：读懂、验真、能不能用</div>
-          <h1>安全不是<span class="red">一把锁</span></h1>
-          <div class="cards three">
-            <article data-enter class="blue"><div class="symbol">箱</div><h2>加密</h2><p>内容不能直接读懂</p></article>
-            <article data-enter class="green"><div class="symbol">验</div><h2>数字签名</h2><p>来源可信，内容未改</p></article>
-            <article data-enter class="red"><div class="symbol">票</div><h2>许可证</h2><p>检查使用权与条件</p></article>
+        <section class="scene" id="files">
+          <div class="eyebrow">再看，下载到机器里的是什么</div>
+          <h1>游戏，就是一组<span class="blue">程序和素材</span></h1>
+          <div class="download-panel" data-enter>
+            <div class="download-heading"><span class="file-icon">游戏<br>文件</span><div><strong>程序：控制怎么玩</strong><p>素材：画面、声音等内容</p></div></div>
+            <div class="download-track"><div></div></div>
+            <div class="download-status">已经下载到你的 PS5</div>
           </div>
-          <p class="conclusion">游戏已下载 ≠ 已获得使用许可</p>
+          <div class="definition" data-after="下载"><b>机器在你家</b><span>游戏文件也在里面</span></div>
         </section>
-        <section class="scene" id="hardware">
-          <div class="eyebrow">硬件层：把敏感能力隔离起来</div>
-          <h1>拆开机器 ≠ <span class="red">拿到钥匙</span></h1>
-          <div class="boundary">
-            <div class="ordinary" data-enter><div class="symbol">应用</div><h2>普通程序</h2><p>不能随意读取敏感区域</p></div>
-            <div class="boundary-label" data-enter>受控边界<br><b>⇄</b></div>
-            <div class="secure" data-enter><div class="lock"></div><h2>隔离的安全机制</h2><p>执行敏感的安全操作</p></div>
+        <section class="scene" id="tamper">
+          <div class="eyebrow">从攻击者的角度，再想一步</div>
+          <h1>文件在我手里，<span class="red">能不能随便改？</span></h1>
+          <div class="play-panel" data-enter>
+            <div class="game-tile"><span>游戏文件</span><strong>▶</strong><small>正版能正常运行</small></div>
+            <div class="status-card"><span class="check thought">?</span><strong>读出程序，修改检查？</strong><div class="notice" data-after="绕过">绕过原来的限制？</div></div>
           </div>
-          <p class="conclusion">概念示意，不代表内部密钥结构或完整调用路径</p>
+          <p class="quiet-note" data-after="绕过">能正常玩，不等于能随便破解。</p>
         </section>
-        <section class="scene" id="layers">
-          <div class="eyebrow">纵深防御：每一层都不完全信任上一层</div>
-          <h1>拿下内核，也<span class="red">未必通关</span></h1>
-          <div class="layer-stack">
-            <div data-enter class="layer blue"><strong>应用 / 沙箱</strong><span>限制普通程序能做什么</span></div>
-            <div data-enter class="layer amber"><strong>系统内核</strong><span>管理进程、内存和权限</span></div>
-            <div data-enter class="layer green"><strong>Hypervisor</strong><span>继续约束内核的敏感操作</span></div>
+        <section class="scene" id="defenses">
+          <div class="eyebrow">索尼要防的是破解，不是阻止你正常玩</div>
+          <div class="facts" data-enter>
+            <div><span>①</span>保护游戏文件</div>
+            <div><span>②</span>保护解密钥匙</div>
+            <div><span>③</span>防止修改检查</div>
           </div>
-          <p class="conclusion">应用漏洞 ≠ 内核权限 ≠ 全机控制</p>
+          <h1 class="question" data-after="怎么">索尼怎样<span class="red">防破解？</span></h1>
+          <p class="next" data-after="顺着">顺着这些防线，一层一层讲明白。</p>
+        </section>
+        <section class="scene" id="encrypt">
+          <div class="eyebrow">先防第一件事：把程序直接读懂</div>
+          <h1>文件在手，<span class="blue">内容却不一定可读</span></h1>
+          <div class="diagram flow" data-enter>
+            <article class="card blue"><div class="symbol">文件</div><h2>加密的程序</h2><p class="cipher">72 1A 8F C3<br>09 B6 2D E1</p></article>
+            <div class="flow-link" data-after="密钥"><b>→</b><span>对应的钥匙</span></div>
+            <article class="card green" data-after="还原"><div class="symbol">还原</div><h2>能理解的内容</h2><p>怎样移动角色<br>怎样显示画面</p></article>
+          </div>
+          <p class="takeaway" data-after="密钥">经过加密的内容，需要对应密钥才能还原。</p>
+        </section>
+        <section class="scene" id="keys">
+          <div class="eyebrow">那主机自己能玩，钥匙不是也在里面吗？</div>
+          <h1>能替你开锁，<span class="red">不等于给你钥匙</span></h1>
+          <div class="diagram boundary" data-enter>
+            <article class="card blue"><div class="symbol">游戏</div><h2>普通应用</h2><p>按规则请求服务</p></article>
+            <div class="boundary-label"><span>受控边界</span><b>⇄</b></div>
+            <article class="card green secure"><div class="lock"></div><h2>安全处理机制</h2><p>敏感解密能力与应用隔离</p></article>
+          </div>
+          <p class="takeaway" data-after="隔离">让主机能用，不让普通程序随便读走钥匙。</p>
+        </section>
+        <section class="scene" id="running">
+          <div class="eyebrow">再想一步：运行的时候，总能抄出来吧？</div>
+          <h1><span class="green">能执行</span>，不等于<span class="red">能随便读取</span></h1>
+          <div class="diagram execution" data-enter>
+            <div class="access green"><b>✓</b><h2>处理器执行</h2><p>按代码工作</p></div>
+            <div class="recipe"><span>受保护的代码</span><div class="recipe-lines"></div><strong data-after="部分代码">执行专用保护</strong></div>
+            <div class="access red" data-after="部分代码"><b>×</b><h2>任意读取</h2><p>不能直接抄走</p></div>
+          </div>
+          <p class="takeaway" data-after="秘方">像机器中的秘方：允许做菜，不等于允许抄配方。</p>
+        </section>
+        <section class="scene" id="signature">
+          <div class="eyebrow">就算读懂了，也改好了，还差一步</div>
+          <h1>改过的版本，<span class="red">机器为什么要认？</span></h1>
+          <div class="diagram verification" data-enter>
+            <div class="verify-row"><div class="program blue">原版程序</div><span>→</span><div class="verify-gate">验真检查</div><span>→</span><strong class="result green">✓ 通过</strong></div>
+            <div class="verify-row" data-after="数字签名"><div class="program red">被修改的程序</div><span>→</span><div class="verify-gate">验真检查</div><span>→</span><strong class="result red">× 拒绝</strong></div>
+          </div>
+          <p class="takeaway" data-after="数字签名">数字签名：检查受保护程序的来源和完整性。</p>
+        </section>
+        <section class="scene" id="signkey">
+          <div class="eyebrow">那给改过的程序，再补一个签名呢？</div>
+          <h1>可信的签名，<span class="red">不能随手补一个</span></h1>
+          <div class="diagram binding" data-enter>
+            <div class="binding-row"><span class="blue">原内容</span><b>＋</b><span>原签名</span><b>→</b><strong class="green">✓ 对得上</strong></div>
+            <div class="binding-row" data-after="改了"><span class="red">改过内容</span><b>＋</b><span>原签名</span><b>→</b><strong class="red">× 对不上</strong></div>
+            <div class="secret-note" data-after="秘密钥匙">可信重签，需要签发用的秘密钥匙。</div>
+          </div>
+          <p class="takeaway" data-after="混为一谈">读懂内容用的钥匙 ≠ 签发可信程序用的钥匙</p>
+        </section>
+        <section class="scene" id="checker">
+          <div class="eyebrow">攻击者还会换一个目标</div>
+          <h1>那就把<span class="red">“检查程序”改掉？</span></h1>
+          <div class="diagram checker" data-enter>
+            <article class="card blue"><div class="symbol">游戏</div><h2>普通游戏</h2><p>想直接修改系统</p></article>
+            <div class="blocked-arrow"><span>→</span><b data-after="不会让">×</b></div>
+            <article class="card green"><div class="symbol">系统</div><h2>负责检查的代码</h2><p data-after="防写">也受防读、防写保护</p></article>
+          </div>
+          <p class="takeaway" data-after="谁有权">接下来的问题是：谁有权修改系统？</p>
+        </section>
+        <section class="scene" id="sandbox">
+          <div class="eyebrow">先从游戏本身的权限说起</div>
+          <h1>游戏，不是这台主机的<span class="red">管理员</span></h1>
+          <div class="diagram sandbox-layout" data-enter>
+            <div class="sandbox-room"><span class="room-title">游戏自己的活动范围</span><div class="room-game">当前游戏</div><div class="resources"><span>允许的内存</span><span>允许的接口</span></div></div>
+            <div class="outside"><b class="red">×</b><h2>随意改系统</h2><p data-after="沙箱">受限范围，就叫沙箱</p></div>
+          </div>
+          <p class="takeaway" data-after="扩散">限制一款游戏的权力，尽量不让漏洞影响整台机器。</p>
+        </section>
+        <section class="scene" id="kernel">
+          <div class="eyebrow">谁给游戏划范围，谁管理系统权限？</div>
+          <h1>操作系统的核心，叫<span class="blue">内核</span></h1>
+          <div class="diagram building" data-enter>
+            <div class="manager" data-after="内核"><strong>内核</strong><span>管理程序 · 内存 · 权限</span></div>
+            <div class="rooms"><div class="current">一个游戏</div><div>其他程序</div><div>其他程序</div></div>
+            <p class="building-note" data-after="整栋楼">控制一间房 ≠ 管理整栋楼</p>
+          </div>
+          <p class="takeaway" data-after="越过">游戏里的权限，不会自动变成控制内核的权限。</p>
+        </section>
+        <section class="scene" id="hypervisor">
+          <div class="eyebrow">再问一句：拿到内核权限，就没有约束了吗？</div>
+          <h1>内核，<span class="red">也不是毫无限制</span></h1>
+          <div class="diagram layer-stack" data-enter>
+            <div class="layer green" data-after="虚拟机监控器"><strong>虚拟机监控器 <small data-after="英文">Hypervisor</small></strong><span>限制敏感代码的读取、修改</span></div>
+            <div class="layer amber"><strong>系统内核</strong><span>管理游戏与其他程序</span></div>
+            <div class="layer blue"><strong>普通游戏</strong><span>自己的活动范围</span></div>
+          </div>
+          <p class="takeaway" data-after="改规则">保护管理者，防止管理者自己随意改规则。</p>
         </section>
         <section class="scene" id="chain">
-          <div class="eyebrow">攻击视角：利用实现错误，而非“暴力算密码”</div>
-          <h1>难点在于<span class="red">串起漏洞链</span></h1>
-          <div class="flow">
-            <article data-enter class="blue"><h2>入口错误</h2><p>异常输入触发问题</p></article>
-            <div data-enter class="arrow">→</div>
-            <article data-enter class="amber"><h2>权限提升</h2><p>尝试越过隔离边界</p></article>
-            <div data-enter class="arrow">→</div>
-            <article data-enter class="red"><h2>更深防线</h2><p>仍有条件与限制</p></article>
+          <div class="eyebrow">回头看，攻击者面对的不是一个密码</div>
+          <h1>突破一个点，<span class="red">不等于一路通关</span></h1>
+          <div class="diagram chain" data-enter>
+            <article class="card blue"><h2>一个漏洞</h2><p>先影响一个程序</p></article><b class="arrow">→</b>
+            <article class="card amber"><h2>另一个边界</h2><p>还需要新的条件</p></article><b class="arrow">→</b>
+            <article class="card green"><h2>更深的保护</h2><p>仍然可能被拦住</p></article>
           </div>
-          <div class="blocked" data-enter><span>×</span> 发现崩溃，不等于稳定突破</div>
-          <p class="conclusion">版本、入口、稳定性：缺一环都可能走不通</p>
+          <p class="term" data-after="漏洞链">多个漏洞在条件满足时组合，叫漏洞链。</p>
+          <p class="takeaway" data-after="整套">某一处出错 ≠ 整套防线都失效</p>
         </section>
         <section class="scene" id="case">
-          <div class="eyebrow">公开研究案例 · PS5Dev / Byepervisor 系列</div>
-          <h1>底层防线，也有<span class="red">实现缺陷</span></h1>
-          <div class="case-panel" data-enter>
-            <div class="case-title">Byepervisor</div>
-            <div class="tags"><span>研究对象：Hypervisor</span><span>有适用条件</span><span>有完成范围</span></div>
-            <div class="case-result"><b class="green">✓ 有证据的局部突破</b><b class="red">≠ 所有版本全面失守</b></div>
+          <div class="eyebrow">不是纸上谈兵，也不是绝对不会被突破</div>
+          <h1>公开研究：<span class="blue">确实有人突破过</span></h1>
+          <div class="diagram case-panel" data-enter>
+            <div class="case-title">PS5Dev / Byepervisor</div>
+            <p>原作者公开的 PS5 虚拟机监控器安全研究</p>
+            <div class="case-results"><strong class="green">✓ 展示过局部突破</strong><strong class="amber" data-after="前提条件">有适用版本和前提</strong></div>
           </div>
-          <p class="conclusion">研究结论必须带上条件，而不是只看“破解成功”</p>
+          <p class="takeaway" data-after="自动解锁">有突破成果 ≠ 所有主机、所有游戏自动解锁</p>
         </section>
-        <section class="scene" id="dump">
-          <div class="eyebrow">回答聊天里的问题：能不能拿到 PC 上玩？</div>
-          <h1>导出游戏 ≠ <span class="red">PC 可玩</span></h1>
-          <div class="flow">
-            <article data-enter class="blue"><h2>内容可读</h2><p>拿到一本外语书</p></article>
-            <div data-enter class="arrow">→</div>
-            <article data-enter class="amber"><h2>环境适配</h2><p>翻译语言，补齐接口</p></article>
-            <div data-enter class="arrow">→</div>
-            <article data-enter class="green"><h2>正确运行</h2><p>复杂场景反复验证</p></article>
+        <section class="scene" id="updates">
+          <div class="eyebrow">防御方也不是做完机器就不管了</div>
+          <h1>系统更新，<span class="green">会堵住已知缺口</span></h1>
+          <div class="diagram road" data-enter>
+            <div class="road-piece blue">入口</div><div class="road-link"></div>
+            <div class="road-piece amber">下一步</div><div class="road-link"></div>
+            <div class="road-piece green">更深权限</div>
+            <div class="repair" data-after="一段被修好"><b>×</b><span>此处已修补</span></div>
           </div>
-          <div class="pill-row" data-enter><span>系统接口</span><span>图形指令</span><span>内存 / 时序</span></div>
-          <p class="conclusion">更强的显卡，不会自动补上兼容性</p>
+          <p class="term" data-after="走法">链条断了一段，原来的走法就可能不通。</p>
+          <p class="takeaway" data-after="具体成果">看系统版本与具体成果，不只看“破解成功”的标题。</p>
         </section>
-        <section class="scene" id="defense">
-          <div class="eyebrow">防御视角：堵漏洞，也让下一次攻击更难</div>
-          <h1>防御方从来<span class="green">没有停下</span></h1>
-          <div class="cards three">
-            <article data-enter class="green"><div class="symbol">补</div><h2>及时修补</h2><p>关闭已知突破口</p></article>
-            <article data-enter class="blue"><div class="symbol">隔</div><h2>减少暴露</h2><p>隔离重要能力</p></article>
-            <article data-enter class="amber"><div class="symbol">查</div><h2>敏感检查</h2><p>不盲目信任请求</p></article>
+        <section class="scene" id="pc">
+          <div class="eyebrow">顺带厘清：突破安全限制之后的另一件事</div>
+          <h1>导出游戏，<span class="red">不等于电脑直接能玩</span></h1>
+          <div class="diagram chain" data-enter>
+            <article class="card blue"><h2>拿到内容</h2><p>安全限制的问题</p></article><b class="arrow">→</b>
+            <article class="card amber" data-after="系统接口"><h2>适配运行环境</h2><p>系统接口 · 图形环境</p></article><b class="arrow" data-after="系统接口">→</b>
+            <article class="card green" data-after="工程"><h2>在电脑上运行</h2><p>还要验证是否正确</p></article>
           </div>
-          <p class="conclusion">玩家：保持更新、使用官方渠道、警惕陌生工具</p>
-        </section>
-        <section class="scene" id="ai">
-          <div class="eyebrow">AI 同时加速研究与防御，但结果仍需实测</div>
-          <h1>AI 是加速器，<span class="red">不是魔法</span></h1>
-          <div class="cards three">
-            <article data-enter class="blue"><div class="symbol">看</div><h2>分析线索</h2><p>可疑代码与测试输入</p></article>
-            <article data-enter class="amber"><div class="symbol">破</div><h2>稳定突破</h2><p>满足条件并可复现</p></article>
-            <article data-enter class="green"><div class="symbol">跑</div><h2>长期可玩</h2><p>复杂游戏正确运行</p></article>
-          </div>
-          <p class="conclusion">三种不同成果，不能用一句“半年必成”代替证据</p>
+          <p class="takeaway" data-after="工程">安全突破与兼容性，是两件不同的工程。</p>
         </section>
         <section class="scene" id="outro">
-          <div class="eyebrow">带走三个“不等于”</div>
-          <h1>PS5 安全，核心是<span class="red">边界</span></h1>
-          <div class="takeaways">
-            <div data-enter><span>01</span>拿到文件 <b>≠</b> 拿到授权</div>
-            <div data-enter><span>02</span>突破一层 <b>≠</b> 全机失守</div>
-            <div data-enter><span>03</span>导出游戏 <b>≠</b> PC 可玩</div>
+          <div class="eyebrow">回到最初的问题：索尼为了防破解做了什么？</div>
+          <h1>能玩 ≠ 能读 ≠ 能改 ≠ <span class="red">能越权</span></h1>
+          <div class="diagram takeaways" data-enter>
+            <div data-after="防直接读"><span class="blue">防直接读</span><strong>加密 ＋ 保护解密钥匙</strong></div>
+            <div data-after="防随意改"><span class="amber">防随意改</span><strong>数字签名 ＋ 内存保护</strong></div>
+            <div data-after="防一路接管"><span class="green">防一路接管</span><strong>沙箱 ＋ 多层权限边界</strong></div>
           </div>
-          <p class="conclusion">研究要有授权 · 结论要有证据</p>
+          <p class="takeaway" data-after="代价">难破解，不是绝不会破解，而是每一步都要付出代价。</p>
         </section>
       </div>
       <div id="caption" aria-live="off"></div>
-      <footer><span>原理科普 · 不含破解操作</span><span id="pageNum"></span></footer>
+      <footer><span>原创概念示意 · 不含破解操作 · 研究需获授权</span><span id="pageNum"></span></footer>
       <div class="progress"><div id="progressFill"></div></div>
     </div>
   </main>
   <div id="controls">
-    <button id="playBtn" type="button">播放</button>
+    <button id="playBtn" type="button">播放完整视频</button>
     <input id="seekBar" type="range" min="0" max="1000" value="0" aria-label="播放进度">
     <span id="timeLabel">00:00</span>
   </div>

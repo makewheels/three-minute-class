@@ -5,22 +5,27 @@
   document.body.classList.toggle("render", render);
   const scenes = [...document.querySelectorAll(".scene")];
   if (scenes.length !== episode.scenes.length) throw new Error("Scene count mismatch");
-  scenes.forEach((element, index) => {
-    if (element.id !== episode.scenes[index].id) throw new Error("Scene order mismatch");
-  });
   const audio = document.getElementById("narration");
   const caption = document.getElementById("caption");
   const slider = document.getElementById("seekBar");
   const play = document.getElementById("playBtn");
   const animations = [];
-  scenes.forEach((scene, sceneIndex) => {
-    scene.querySelectorAll("[data-enter]").forEach((element, index) => {
-      const animation = element.animate([
-        { opacity: 0, translate: "0 25px", scale: ".96" },
-        { opacity: 1, translate: "0 0", scale: "1" },
-      ], { duration: 500, delay: index * 190, fill: "both", easing: "ease-out" });
+  const reveals = [];
+  scenes.forEach((element, index) => {
+    const scene = episode.scenes[index];
+    if (element.id !== scene.id) throw new Error("Scene order mismatch");
+    element.querySelectorAll("[data-enter]").forEach((target) => {
+      const animation = target.animate([
+        { opacity: 0, translate: "0 16px" },
+        { opacity: 1, translate: "0 0" },
+      ], { duration: 650, fill: "both", easing: "ease-out" });
       animation.pause();
-      animations.push({ animation, sceneIndex });
+      animations.push({ animation, index });
+    });
+    element.querySelectorAll("[data-after]").forEach((target) => {
+      const cue = scene.cues.find((item) => item.text.includes(target.dataset.after));
+      if (!cue) throw new Error(`Missing narration cue: ${target.dataset.after}`);
+      reveals.push({ target, index, start: cue.start });
     });
   });
   const formatTime = (time) => `${String(Math.floor(time / 60)).padStart(2, "0")}:${String(Math.floor(time % 60)).padStart(2, "0")}`;
@@ -29,12 +34,11 @@
     let index = 0;
     episode.scenes.forEach((scene, i) => { if (t >= scene.start) index = i; });
     const scene = episode.scenes[index];
-    const local = t - scene.start;
+    const local = Math.round((t - scene.start) * 1000) / 1000;
     scenes.forEach((element, i) => element.classList.toggle("active", i === index));
-    animations.forEach(({ animation, sceneIndex }) => {
-      animation.currentTime = sceneIndex === index ? local * 1000 : 0;
-    });
-    let cue = scene.cues[0];
+    animations.forEach((item) => { item.animation.currentTime = item.index === index ? local * 1000 : 0; });
+    reveals.forEach((item) => { item.target.classList.toggle("revealed", item.index === index && local >= item.start); });
+    let cue;
     for (const item of scene.cues) {
       if (local >= item.start) cue = item;
     }
@@ -59,12 +63,13 @@
   }
   play.addEventListener("click", async () => {
     if (audio.paused) {
+      if (audio.ended) audio.currentTime = 0;
       try { await audio.play(); } catch { play.textContent = "播放失败，请重试"; }
     } else audio.pause();
   });
   audio.addEventListener("play", () => { play.textContent = "暂停"; });
-  audio.addEventListener("pause", () => { play.textContent = "播放"; });
-  audio.addEventListener("ended", () => { play.textContent = "重播"; });
+  audio.addEventListener("pause", () => { play.textContent = "播放完整视频"; });
+  audio.addEventListener("ended", () => { seek(episode.total); play.textContent = "重播完整视频"; });
   slider.addEventListener("input", () => {
     audio.currentTime = Number(slider.value) / 1000 * episode.total;
     seek(audio.currentTime);

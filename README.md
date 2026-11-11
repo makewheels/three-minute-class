@@ -1,29 +1,32 @@
 # 三分钟课堂
 
-用 **HTML + TTS + FFmpeg** 做三分钟知识视频。白底、大字、每页一个概念；脚本、配音、画面、字幕、成片全部开源。
+用 **HTML + TTS + FFmpeg** 做短知识视频。白底、大字、每页一个概念；脚本、配音、画面、字幕、成片全部开源。时长服务于理解，不为了三分钟加速旁白。
 
 ![封面](episodes/002-ps5-security/cover/cover.svg)
 
 ## 本期
 
-**EP.02 · PS5 为什么难破解？**
+**EP.02 · PS5 防破解：索尼到底做了什么？（完整重做版）**
 
-从 PS5 安全角度，讲清加密、签名、许可证、硬件隔离与权限边界；用公开研究说明漏洞链为什么难，再解释“导出游戏”为什么不等于“PC 可玩”。包含中文配音、攻防示意动画与字幕，不包含破解操作或原始聊天。
+先把观众当作完全不懂 PS5 的小白：主机是什么，游戏由什么组成，正版可以正常运行。再沿着“文件在我手里，为什么不能随便读、改、绕过检查”的问题，逐步讲明索尼的加密、钥匙隔离、数字签名、内存保护与权限边界。不是解释发售前为什么不能玩，也不保证所有版本绝对无法破解。
 
 | | |
 |---|---|
 | 成片 | [out/ps5-security.mp4](episodes/002-ps5-security/out/ps5-security.mp4) |
+| 下载 | [GitHub Release · 完整重做版](https://github.com/makewheels/three-minute-class/releases/tag/ep02-ps5-security-revised) |
+| B 站 | [BV1wNW56zEgo](https://www.bilibili.com/video/BV1wNW56zEgo) · AIGC 2026 合集 |
 | 画面 | [slides/index.html](episodes/002-ps5-security/slides/index.html) |
 | 脚本 | [script.md](episodes/002-ps5-security/script.md) |
 | 配音 | [audio/narration.m4a](episodes/002-ps5-security/audio/narration.m4a) |
 | 字幕 | [subtitles/ps5-security.srt](episodes/002-ps5-security/subtitles/ps5-security.srt) |
 | 封面 | [cover/cover.svg](episodes/002-ps5-security/cover/cover.svg) |
 | 来源 | [research/sources.md](episodes/002-ps5-security/research/sources.md) |
-| 时长 | 约 3 分钟 · 1920 × 1080 · 30fps |
+| 时长 | 6 分 9 秒 · 1920 × 1080 · 30fps |
+| 节奏 | 自然语速；每场先看图 1.2 秒，讲完停 2.2 秒，结尾停 4 秒 |
 
 复现：沿用下方流程，将 `EPISODE` 改为 `episodes/002-ps5-security`。本期所有图形均为原创示意，不使用游戏画面；内容不构成对某个固件、游戏或破解期限的保证。
 
-**开场重做预览（未替换正式成片）**：[HTML 播放器](episodes/002-ps5-security-opening-preview/slides/index.html) · [预览 MP4](episodes/002-ps5-security-opening-preview/out/ps5-security-opening-preview.mp4)。先把观众当作完全不懂 PS5 的小白，交代主机是什么、游戏由程序和素材组成、正版可以正常运行，再引出“机器和文件都在玩家手里，索尼怎么防止读出、修改程序和绕过限制”。主线是索尼防破解做了什么，不是发售前为什么不能玩。自然语速，每页先留 1.2 秒看画面，讲完再停 2.2 秒，最后停留 3 秒。时长服务于理解，不靠加速或压缩知识点。
+已按确认方向的 [开场 HTML 预览](episodes/002-ps5-security-opening-preview/slides/index.html) 完成全片重做。开场预览作为过程记录保留；当前完整版本以上表为准。[原始三分钟版 Release](https://github.com/makewheels/three-minute-class/releases/tag/ep02-ps5-security) 不覆盖，可对照或回退。
 
 ## 往期
 
