@@ -2,9 +2,28 @@
 
 用 **HTML + TTS + FFmpeg** 做三分钟知识视频。白底、大字、每页一个概念；脚本、配音、画面、字幕、成片全部开源。
 
-![封面](episodes/001-pdf-ca-signature/cover/cover.svg)
+![封面](episodes/002-ps5-security/cover/cover.svg)
 
 ## 本期
+
+**EP.02 · PS5 为什么难破解？**
+
+从 PS5 安全角度，讲清加密、签名、许可证、硬件隔离与权限边界；用公开研究说明漏洞链为什么难，再解释“导出游戏”为什么不等于“PC 可玩”。包含中文配音、攻防示意动画与字幕，不包含破解操作或原始聊天。
+
+| | |
+|---|---|
+| 成片 | [out/ps5-security.mp4](episodes/002-ps5-security/out/ps5-security.mp4) |
+| 画面 | [slides/index.html](episodes/002-ps5-security/slides/index.html) |
+| 脚本 | [script.md](episodes/002-ps5-security/script.md) |
+| 配音 | [audio/narration.m4a](episodes/002-ps5-security/audio/narration.m4a) |
+| 字幕 | [subtitles/ps5-security.srt](episodes/002-ps5-security/subtitles/ps5-security.srt) |
+| 封面 | [cover/cover.svg](episodes/002-ps5-security/cover/cover.svg) |
+| 来源 | [research/sources.md](episodes/002-ps5-security/research/sources.md) |
+| 时长 | 约 3 分钟 · 1920 × 1080 · 30fps |
+
+复现：沿用下方流程，将 `EPISODE` 改为 `episodes/002-ps5-security`。本期所有图形均为原创示意，不使用游戏画面；内容不构成对某个固件、游戏或破解期限的保证。
+
+## 往期
 
 **EP.01 · PDF 上的红章，能信吗？**
 

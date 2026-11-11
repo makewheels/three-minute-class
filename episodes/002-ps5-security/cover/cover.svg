@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <rect width="1920" height="1080" fill="#fff"/>
+  <g font-family="Microsoft YaHei, PingFang SC, sans-serif">
+    <rect x="100" y="95" width="18" height="18" fill="#c8332d" transform="rotate(45 109 104)"/>
+    <text x="145" y="118" font-size="36" fill="#68635d">三分钟课堂 · EP.02</text>
+    <text x="100" y="330" font-size="115" font-weight="700" fill="#171614">PS5 为什么</text>
+    <text x="100" y="490" font-size="140" font-weight="700" fill="#c8332d">难破解？</text>
+    <text x="100" y="620" font-size="48" fill="#514d48">密钥 · 权限 · 漏洞链</text>
+    <text x="100" y="870" font-size="47" fill="#171614">拿到文件 ≠ 突破权限 ≠ PC 可玩</text>
+    <text x="100" y="973" font-size="32" fill="#68635d">三分钟看懂安全攻防原理</text>
+    <g transform="translate(1190 245)">
+      <rect x="0" y="0" width="530" height="110" rx="20" fill="#edf3fb" stroke="#2358a5" stroke-width="4"/>
+      <rect x="0" y="145" width="530" height="110" rx="20" fill="#fff8e9" stroke="#966200" stroke-width="4"/>
+      <rect x="0" y="290" width="530" height="110" rx="20" fill="#eaf6ef" stroke="#1e7a4c" stroke-width="4"/>
+      <text x="265" y="72" text-anchor="middle" font-size="42" fill="#2358a5">应用 / 沙箱</text>
+      <text x="265" y="217" text-anchor="middle" font-size="42" fill="#966200">系统内核</text>
+      <text x="265" y="362" text-anchor="middle" font-size="42" fill="#1e7a4c">Hypervisor</text>
+    </g>
+  </g>
+</svg>
