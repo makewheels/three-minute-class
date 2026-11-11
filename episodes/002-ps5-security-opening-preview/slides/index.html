@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PS5 开场重做预览 · 先讲来龙去脉</title>
+  <link rel="stylesheet" href="slides.css">
+</head>
+<body>
+  <main id="stageWrap">
+    <div id="stage">
+      <header><span><b class="brand-dot"></b>三分钟课堂</span><span>开场预览 · 未替换正式成片</span></header>
+      <div id="scenes">
+        <section class="scene" id="console">
+          <div class="eyebrow">先认识一下这台机器</div>
+          <h1>PS5：接上电视，<span class="blue">用手柄玩游戏</span></h1>
+          <div class="equipment" data-enter>
+            <div class="console"><div>PS5</div></div>
+            <div class="cable"></div>
+            <div class="television"><div class="screen"><div class="game-shape"></div><div class="game-ground"></div></div><div class="stand"></div></div>
+            <div class="controller"><b>＋</b><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="ticket" data-after="假设"><span>你已经付了钱</span><strong>新游戏 <b>明天才能玩</b></strong></div>
+        </section>
+        <section class="scene" id="download">
+          <div class="eyebrow">接着，先把游戏准备好</div>
+          <h1>今晚先下载，<span class="blue">明天就不用等</span></h1>
+          <div class="download-panel" data-enter>
+            <div class="download-heading"><span class="file-icon">游戏<br>文件</span><div><strong>把文件下载到 PS5</strong><p>不是到了明天，才开始下载</p></div></div>
+            <div class="download-track"><div></div></div>
+            <div class="download-status">下载完成</div>
+          </div>
+          <div class="definition" data-after="预下载"><b>预下载</b><span>先准备文件，到了发售时间再玩</span></div>
+        </section>
+        <section class="scene" id="locked">
+          <div class="eyebrow">现在，你试着点开游戏</div>
+          <h1>下载完成，<span class="red">却还是不能玩</span></h1>
+          <div class="play-panel" data-enter>
+            <div class="game-tile"><span>新游戏</span><strong>▶</strong><small>你已经买了</small></div>
+            <div class="status-card"><span class="check">✓</span><strong>文件已下载完成</strong><div class="notice" data-after="屏幕">尚未到可游玩时间</div></div>
+          </div>
+          <p class="quiet-note" data-after="屏幕">先停在这里，想一想。</p>
+        </section>
+        <section class="scene" id="question">
+          <div class="eyebrow">故事讲到这里，问题才出现</div>
+          <div class="facts" data-enter>
+            <div><span>✓</span>机器是我的</div>
+            <div><span>✓</span>游戏已经买了</div>
+            <div><span>✓</span>文件已经下好了</div>
+          </div>
+          <h1 class="question" data-after="为什么">为什么<span class="red">还不能玩？</span></h1>
+          <p class="next" data-after="接下来">接下来，再顺着这个问题讲安全。</p>
+        </section>
+      </div>
+      <div id="caption" aria-live="off"></div>
+      <footer><span>示例场景 · 画面为原创示意</span><span id="pageNum"></span></footer>
+      <div class="progress"><div id="progressFill"></div></div>
+    </div>
+  </main>
+  <div id="controls">
+    <button id="playBtn" type="button">播放开场预览</button>
+    <input id="seekBar" type="range" min="0" max="1000" value="0" aria-label="播放进度">
+    <span id="timeLabel">00:00</span>
+  </div>
+  <audio id="narration" src="../audio/narration.m4a" preload="metadata"></audio>
+  <script src="data.js"></script>
+  <script src="slides.js"></script>
+</body>
+</html>

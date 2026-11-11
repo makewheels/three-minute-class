@@ -1,0 +1,38 @@
+{
+  "series": "三分钟课堂",
+  "episode": "02 · 开场预览",
+  "slug": "ps5-security-opening-preview",
+  "title": "买好了 PS5 游戏，为什么还不能玩？",
+  "subtitle": "先讲来龙去脉，再讲安全原理",
+  "voice": "zh-CN-YunxiNeural",
+  "rate": "+0%",
+  "volume": "+0%",
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "lead": 1.2,
+  "gap": 2.2,
+  "tail": 3.0,
+  "scenes": [
+    {
+      "id": "console",
+      "label": "先认识 PS5",
+      "narration": "PS5，是索尼的游戏主机。接上电视，用手柄玩游戏。假设你付了钱，买好一款明天才能玩的新游戏。"
+    },
+    {
+      "id": "download",
+      "label": "为什么提前下载",
+      "narration": "为了明天不用等，今晚就把游戏提前下载好。这叫预下载：先准备文件，到了发售时间再玩。"
+    },
+    {
+      "id": "locked",
+      "label": "文件到了，还是不能玩",
+      "narration": "可你现在点开它，屏幕却提示：还没到可以玩的时间。"
+    },
+    {
+      "id": "question",
+      "label": "先把问题想清楚",
+      "narration": "等一下。机器是我的，游戏也买了，文件都下载完了。为什么还不能玩？这，就是我们接下来要讲的问题。"
+    }
+  ]
+}

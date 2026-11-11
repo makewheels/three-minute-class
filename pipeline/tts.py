@@ -116,6 +116,7 @@ def main() -> None:
         sys.exit("edge-tts not found; run: uv sync --project pipeline && uv run --project pipeline python pipeline/tts.py ...")
 
     scenes = meta["scenes"]
+    lead = round(float(meta.get("lead", 0.0)), 3)
     durations: list[float] = []
     scene_cues: list[list[dict]] = []
 
@@ -142,10 +143,13 @@ def main() -> None:
                     str(srt),
                 ]
             )
-        duration = ffprobe_duration(mp3)
+        duration = round(ffprobe_duration(mp3) + lead, 3)
         durations.append(duration)
         cues = parse_srt(srt)
         align_cues(scene["narration"], cues)
+        for cue in cues:
+            cue["start"] = round(cue["start"] + lead, 3)
+            cue["end"] = round(cue["end"] + lead, 3)
         scene_cues.append(cues)
         print(f"    {duration:.3f}s")
 
@@ -180,7 +184,8 @@ def main() -> None:
     filters = []
     for i in range(len(scenes)):
         pad = gap if i < len(scenes) - 1 else tail
-        filters.append(f"[{i}:a]aresample=48000,apad=pad_dur={pad}[a{i}]")
+        delay = f"adelay={round(lead * 1000)}:all=1," if lead else ""
+        filters.append(f"[{i}:a]aresample=48000,{delay}apad=pad_dur={pad}[a{i}]")
     concat_inputs = "".join(f"[a{i}]" for i in range(len(scenes)))
     filter_complex = (
         ";".join(filters)

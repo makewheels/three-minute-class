@@ -21,6 +21,8 @@
 
 `scenes` 的顺序必须和 `slides/index.html` 里的 `<section class="scene">` 顺序一致。
 
+需要让观众先看画面、再听解释时，可以增加 `"lead": 1.2`，给每场旁白前留 1.2 秒静音；`gap` 是讲完后停留的时间，`tail` 是最后一场的停留时间。`lead` 默认是 0，不改变既有视频的节奏。不要靠加速旁白给停顿腾时间。
+
 ## 2. 配音与时间轴
 
 `pipeline/tts.py` 做四件事：
@@ -33,11 +35,13 @@
 `manifest.json` 里每场有：
 
 - `start`：这一场在成片中的绝对起点；
-- `duration`：旁白实际时长；
+- `duration`：场景前静音与旁白的实际时长；
 - `slot`：这一场占用的时间（`duration + gap`，最后一场加 `tail`）；
 - `cues`：这一场内部的逐句字幕，时间是场景内相对时间。
 
 **改旁白后不要手改 `data.js`**，重新跑 `make audio`。
+
+只改 `lead`、`gap` 或 `tail`，可运行 `tts.py --reuse-audio`，重新生成音轨与同步时间轴，分场原始 MP3/SRT 不变。播放器应在第一条字幕的 `start` 之前不显示字幕，避免把后面的解释提前呈现。
 
 ## 3. 画面与 seek
 
